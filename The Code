@@ -1,0 +1,26 @@
+How will the functions work?
+
+Function 1
+------------------------------------------------------------------------------------------------------------------------------------------------
+The when the user views the website the code will check to see if there is a cookie for the website
+	If there is no cookie then create one with just the number 0 on it with no expration date
+		Then store that number in a global variable and do function 2
+	If their is a cookie then store its data (a number) in a global variable and its creation date in a variable
+		Then get todays date and store it in a variable and compair the date the cookie was created to the date of today
+		If the creation date of the cookie is the same as todays date then do function 2
+			If not then increment the stored number in the global variable by 1
+			then do function 2
+
+Function 2
+------------------------------------------------------------------------------------------------------------------------------------------------
+Find the category called "Quote of the Day" (its slug will be called "quote_of_the_day") in wordpress categories
+Get the stored number in the global variable and loop through each post within that category until it matchs the stored global variable number 
+(eg: if the stored global variable number is 6 find the 6th post within said category)
+	if the stored global variable number exceedes the amount of posts within said category
+		then reset the stored global variable number to 0 and save it to the global variable
+	if the stored global variable number does not exceed the amount of posts within said category
+		then get said post and display it and do function 3
+
+Function 3
+------------------------------------------------------------------------------------------------------------------------------------------------
+Get the stored global variable number and create/overide the old cookie with it with no expriation date

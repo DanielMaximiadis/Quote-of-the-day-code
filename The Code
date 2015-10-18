@@ -1,4 +1,13 @@
-How will the functions work?
+<?php
+/*
+This functions is to display a quote a day within a wordpress website
+
+How will the function work?
+
+This code will be placed in a text widget within wordpress or within the functions file
+The quote will be displayed within a widget and will change once a day/24 hrs or when the user opens up the website again
+For testing purposes have the quote change every 2 seconds (not compulsory)
+Each quote will be a post connected to the category called "Quote of the Day" its slug will be called "quote_of_the_day"
 
 Function 1
 ------------------------------------------------------------------------------------------------------------------------------------------------
@@ -24,3 +33,38 @@ Get the stored number in the global variable and loop through each post within t
 Function 3
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Get the stored global variable number and create/overide the old cookie with it with no expriation date
+*/
+
+// the $quote_array_tester array will be deleted when code is working
+$quote_array_tester = array("Volvo","BMW","Toyota","alfa romeo","alpine","amg","aston martin","audi","austin","bentley","bugatti veyron","cadillac","chevrolet","chrysler","citroen","cobra","cooper","daewoo","daihatsu","datsun","dodge charger","dodge viper","duesenberg",);
+
+$quote_counter = 0;
+
+function cookie_check()
+	{
+	if(!isset($_COOKIE[$cookie_name]))
+		{
+		$cookie_name = "quote_count";
+		$cookie_value = "0";
+		setcookie($cookie_name, $cookie_value, time() + (86400 * 182), "/"); // 86400 = 1 day
+		}
+	else
+		{
+	    echo "Cookie '" . $cookie_name . "' is set!<br>";
+	    echo "Value is: " . $_COOKIE[$cookie_name];
+		}
+	}
+
+cookie_check();
+
+function output_quote()
+	{
+	
+	}
+	
+function create_cookie()
+	{
+	
+	}
+
+?>
